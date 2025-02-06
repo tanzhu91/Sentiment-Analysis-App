@@ -57,7 +57,7 @@ examples = [
     "I absolutely love this product! It's amazing and works perfectly.",
     "This is the worst experience I've ever had. I regret buying this.",
     "The meeting is scheduled for 3 PM today in Conference Room B. Please bring your updated reports",
-    "My morning started with a flat tire, but my friend helped me fix it quickly. Now I’m just waiting for the rest of the day to unfold.",
+    "My morning started with a flat tire, but my friend helped me fix it quickly. Now I’m just waiting for the rest of this bumpy day to unfold.",
     "The service was fantastic, but the product itself was disappointing."
 ]
 
