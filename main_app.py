@@ -33,7 +33,7 @@ HUGGING_FACE_TOKEN = st.secrets["hugging_face"]["token"]
 
 
 API_URL = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment"
-headers = {"Authorization": f"Bearer {st.secrets['hugging_face']['token']}"}  # Replace with your token
+headers = {"Authorization": f"Bearer {st.secrets['hugging_face']['token']}"}
 
 
 label_mapping = {
