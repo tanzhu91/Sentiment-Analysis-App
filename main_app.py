@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 from textblob import TextBlob
 from collections import Counter
+import nltk
+nltk.download('punkt')
 import warnings
 warnings.filterwarnings("ignore")
 
