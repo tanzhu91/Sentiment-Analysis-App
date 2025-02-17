@@ -1,3 +1,4 @@
+import nltk_setup
 import streamlit as st
 import requests
 from textblob import TextBlob
