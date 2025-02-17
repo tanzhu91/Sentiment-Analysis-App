@@ -1,15 +1,9 @@
-import nltk
 import streamlit as st
 import requests
 from textblob import TextBlob
 from collections import Counter
 import warnings
 warnings.filterwarnings("ignore")
-
-nltk.download('punkt')
-nltk.download('punkt_tab') 
-
-
 
 
 
