@@ -1,4 +1,4 @@
 streamlit
 requests
 textblob
-nltk
+nltk[nltk_data]
