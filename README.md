@@ -22,12 +22,9 @@ Stay tuned for updates as the project evolves! 🚀
 
 ![Screenshot (84)](https://github.com/user-attachments/assets/21950761-39fa-43d9-bb4d-1dcdb8f8b2e8)
 
-
 ![Screenshot (85)](https://github.com/user-attachments/assets/2e54b9d3-71bf-4450-819a-c6fa9624eab2)
 
 ![Screenshot (86)](https://github.com/user-attachments/assets/bab94ffa-40ff-4480-9fc2-42e375022bf9)
-
-![Screenshot (87)](https://github.com/user-attachments/assets/6cee76d4-85fa-4f84-b7d4-b9067ccaaaed)
 
 ![Screenshot (88)](https://github.com/user-attachments/assets/bb65dd28-1ab2-417f-b69a-c5741bae0fe5)
 
