@@ -2,6 +2,9 @@ import streamlit as st
 import requests
 from textblob import TextBlob
 from collections import Counter
+import warnings
+warnings.filterwarnings("ignore")
+
 
 
 st.set_page_config(layout="wide")
