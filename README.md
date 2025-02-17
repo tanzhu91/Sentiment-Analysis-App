@@ -20,7 +20,8 @@ Stay tuned for updates as the project evolves! 🚀
 
 ![Screenshot (83)](https://github.com/user-attachments/assets/55f65374-3aa1-43b6-82d6-7a08dfe84531)
 
-![Screenshot (84)](https://github.com/user-attachments/assets/80caf180-c274-4c4a-abae-8862a71a4a07)
+![Screenshot (84)](https://github.com/user-attachments/assets/21950761-39fa-43d9-bb4d-1dcdb8f8b2e8)
+
 
 ![Screenshot (85)](https://github.com/user-attachments/assets/2e54b9d3-71bf-4450-819a-c6fa9624eab2)
 
