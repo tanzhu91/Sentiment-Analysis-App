@@ -1,11 +1,13 @@
+import nltk
 import streamlit as st
 import requests
-import nltk
-nltk.download('punkt')
 from textblob import TextBlob
 from collections import Counter
 import warnings
 warnings.filterwarnings("ignore")
+nltk.download('punkt')
+
+
 
 
 
