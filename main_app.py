@@ -168,6 +168,8 @@ for i, example in enumerate(examples):
 '''
 
 
+if "user_input" not in st.session_state:
+    st.session_state.user_input = ""
 
 
 
@@ -177,8 +179,6 @@ user_input = st.text_area("Enter your own text here:",
                         height=200,  # Fixed height of 200 pixels
                         key="text_area")
 
-if "user_input" not in st.session_state:
-    st.session_state.user_input = ""
 
 if user_input != st.session_state.user_input:
     st.session_state.user_input = user_input
