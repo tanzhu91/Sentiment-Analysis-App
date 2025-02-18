@@ -1,4 +1,4 @@
-import nltk_setup
+#import nltk_setup
 import streamlit as st
 import requests
 from textblob import TextBlob
@@ -50,10 +50,19 @@ label_mapping = {
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
-    return response.json()
+    try:
+        return response.json()
+    except ValueError:
+        st.error("Invalid JSON response from API.")
+        return None
 
 def analyze_sentiment(text):
     data = query({"inputs": text})
+
+    if not isinstance(data, (dict,list)):
+        st.error('Unexpexted API response format')
+        return None
+
     if isinstance(data, dict) and "error" in data:
         st.error(f"API Error: {data['error']}")
         return None  # Return None if there's an error
@@ -66,6 +75,10 @@ def analyze_sentiment(text):
         else:
             # If the response is a single list of sentiment scores, treat it as one sentence
             all_sentiments = [data]
+
+        if not all_sentiments:
+            st.warning("No sentiment data received.")
+            return None
         
         # Initialize a dictionary to store aggregated scores
         aggregated_scores = {"LABEL_0": 0.0, "LABEL_1": 0.0, "LABEL_2": 0.0}
@@ -73,15 +86,19 @@ def analyze_sentiment(text):
         # Iterate over all sentences and aggregate scores
         for sentiments in all_sentiments:
             for sentiment in sentiments:
-                label = sentiment["label"]
-                score = sentiment["score"]
-                aggregated_scores[label] += score
+                label = sentiment.get("label")
+                score = sentiment.get("score", 0.0)
+                if label:
+                    aggregated_scores[label] += score
         
         # Calculate average scores
         num_sentences = len(all_sentiments)
+        if num_sentences == 0:
+            st.warning("No valid sentences processed.")
+
         average_scores = {label: score / num_sentences for label, score in aggregated_scores.items()}
-        
         return average_scores
+    
     except Exception as e:
         st.warning(f"Failed to analyse sentiment: {e}")
         return None
@@ -147,11 +164,18 @@ for i, example in enumerate(examples):
         st.session_state.user_input = user_input
 '''
 '''
+
+user_input = st.session_state.get("user_input", "")
+
+
+
 # Text area for user input
 user_input = st.text_area("Enter your own text here:",
                         value=st.session_state.get("user_input", ""),
                         height=200,  # Fixed height of 200 pixels
                         key="text_area")
+
+
 '''
 
 '''
@@ -169,18 +193,21 @@ if st.button("Analyze Sentiment!"):
                     reverse=True  # Descending order
                 )
 
-                for label, score in average_scores.items():
-                    sentiment_label = label_mapping[label]
+                for label, score in sorted_scores:
+                    sentiment_label = label_mapping.get(label,label)
                     st.write(f"{sentiment_label}: {score * 100:.2f}%")
                     st.progress(score)
             else:
-                st.error("Failed to analyze sentiment. Please try again.")
+                st.error("Failed to analyze sentiment. Please try again in a moment.")
     else:
         st.write("Please enter some text!")
 
 if st.button("Clear Results"):
     st.session_state.user_input = ""
+    st.session_state.clear()
     st.rerun()
+
+
 '''
 
 '''
