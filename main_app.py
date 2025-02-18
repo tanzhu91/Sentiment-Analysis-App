@@ -104,6 +104,8 @@ def analyze_sentiment(text):
 
 
 
+
+
 st.title("Sentiment Analysis App")
 
 
@@ -171,14 +173,26 @@ for i, example in enumerate(examples):
 
 # Text area for user input
 user_input = st.text_area("Enter your own text here:",
-                        value=st.session_state.get("user_input", ""),
+                        value=st.session_state.user_input,
                         height=200,  # Fixed height of 200 pixels
                         key="text_area")
 
+if "user_input" not in st.session_state:
+    st.session_state.user_input = ""
+
+if user_input != st.session_state.user_input:
+    st.session_state.user_input = user_input
+
 
 '''
 
 '''
+
+
+
+if st.button("Clear Results 2x"):
+    st.session_state.user_input = ""
+
 if st.button("Analyze Sentiment!"):
     if user_input:
         with st.spinner("Analyzing sentiment..."):
@@ -202,10 +216,6 @@ if st.button("Analyze Sentiment!"):
     else:
         st.write("Please enter some text!")
 
-if st.button("Clear Results"):
-    st.session_state.user_input = ""
-    st.session_state.clear()
-    st.rerun()
 
 
 '''
@@ -247,4 +257,4 @@ with st.expander("**Click to see more details**"):
         with col2:
             st.subheader("Most Common Words")
             for word, count in most_common_words:
-                st.write(f"- {word} ({count} times)")
+                st.write(f" {word} ({count} times)")
