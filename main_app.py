@@ -1,4 +1,3 @@
-#import nltk_setup
 import streamlit as st
 import requests
 from textblob import TextBlob
@@ -117,6 +116,7 @@ examples = [
     """I absolutely love this product! It's amazing and works perfectly.""",
     """This is the worst experience I've ever had. I regret buying this.""",
     """The meeting is scheduled for 3 PM today in Conference Room B. Please bring your updated reports.""",
+    """The service was absolutely amazing, but the product itself was disappointing.""",
     """Hello Tanzhu,
 
 Thank you for your interest in Jack Link’s! We received your application for our Junior Business Analyst (m/w/d) position located in Eyber Str. 81, 91522 Ansbach, Germany!
@@ -165,7 +165,7 @@ for i, example in enumerate(examples):
 '''
 '''
 
-user_input = st.session_state.get("user_input", "")
+
 
 
 
