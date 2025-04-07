@@ -15,7 +15,6 @@ This project utilizes the **Twitter-RoBERTa-Base-Sentiment** model, a pre-traine
   - 📂 Support for CSV and TXT file uploads for bulk sentiment analysis  
   - 🔍 Integration of multiple NLP models for deeper sentiment insights  
 
-Stay tuned for updates as the project evolves! 🚀  
 
 
 ![Screenshot (83)](https://github.com/user-attachments/assets/55f65374-3aa1-43b6-82d6-7a08dfe84531)
